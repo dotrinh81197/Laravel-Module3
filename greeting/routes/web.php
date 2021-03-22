@@ -29,3 +29,23 @@ Route::post('/login', function (Illuminate\Http\Request $request) {
 
     return view('login_error');
 });
+
+
+Route::get('dictionary', function () {
+    return view('dictionary');
+});
+
+Route::post('/dictionary', function (\Illuminate\Http\Request $request) {
+    $arr['hello'] = 'Xin chào';
+    $arr['bye']   = 'Tạm biệt';
+    $keyword            = $request->keyword;
+    foreach ($arr as $key => $value) {
+        if ($keyword == $key) {
+            $result = $value;
+            return view('resultdictionary', compact(['result']));
+        } else {
+            $result = 'Từ điển không có từ này';
+            return view('resultdictionary', compact(['result']));
+        }
+    }
+});
