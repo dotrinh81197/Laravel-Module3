@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/greeting/{name?}',  function ($name = null) {
+    if ($name) {
+        echo 'Hello ' . $name . '!';
+    } else {
+        echo 'Hello World !';
+    }
 });
