@@ -19,6 +19,9 @@
                        </p>
                     @endif
                 </div>
+                <div>
+                      <a class="btn btn-primary" href="{{ route('customer.create') }}">Thêm mới</a>
+                </div>
             </div>
             <div class="row">
                   <table class="table table-striped">
@@ -57,7 +60,6 @@
                         @endif
                         </tbody>
                         </table>
-                        <a class="btn btn-primary" href="{{ route('customer.create') }}">Thêm mới</a>
                          </div>   
             </div>    
           

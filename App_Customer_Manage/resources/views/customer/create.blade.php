@@ -15,7 +15,7 @@
           <h1>Thêm mới khách hàng</h1>
       </div>
       <div class="col-12">
-         <form method="post" action="{{ route('customers.store') }}">
+         <form method="post" action="{{ route('customer.store') }}">
          @csrf
          <div class="form-group">
             <label>Tên khách hàng</label>
