@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CustomerFromRequest;
 use App\Models\City;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
 
 class CustomerController extends Controller
 {
@@ -40,8 +42,9 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CustomerFromRequest $request)
     {
+
         $customer = new Customer();
         $customer->name     = $request->input('name');
         $customer->email    = $request->input('email');

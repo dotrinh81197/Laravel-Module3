@@ -9,6 +9,13 @@
 </head>
 <body>
 <div class="container">
+   <div class="error-message">
+      @if ($errors->any())
+          @foreach($errors->all() as $nameError)
+              <p style="color:red">{{ $nameError }}</p>
+          @endforeach
+      @endif
+  </div>
    <div class="col-12">
       @if (Session::has('success'))
          <p class="text-success">
